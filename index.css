@@ -9,9 +9,11 @@ body {
     width: 100%;
     height: 100%;
 }
-td{
+
+td {
     padding: 10px;
 }
+
 .icon {
     -webkit-user-select: none;
     user-select: none;
@@ -26,6 +28,7 @@ td{
 .hidden {
     display: none;
 }
+
 
 
 
@@ -161,4 +164,10 @@ button {
     position: absolute;
     width: 100%;
     display: none;
+    z-index: 999999999;
+    background-color: #fff;
+    border: 1px solid #000;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
 }

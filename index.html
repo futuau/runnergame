@@ -14,8 +14,8 @@
 
 <body id="t" class="offline">
     <div class="noExtension" id="noExtension">
-        提示: 请安装
-        <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a> 再使用小秘密
+        提示: 请先安装
+        <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a> 再进行游戏
     </div>
     <div class="onlyforchrome" style="display:block;font-weight:bold; font-size:30px;text-align:center;color:#777E8C;"><span style="color:#6cf">T-</span><span style="color:#ff6680">Rex</span> Runner</div>
     <div class="onlyforchrome" style="margin-top:5px;text-align:center;color:#8a8a8a;margin-bottom:80px; font-size:1em;line-height:1.6em;">
@@ -65,7 +65,7 @@
                     <tr v-for="(item,index) in list">
                         <td>
                             <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">{{index}}</font>
+                                <font style="vertical-align: inherit;">{{index+1}}</font>
                             </font>
                         </td>
                         <td>
@@ -74,7 +74,7 @@
                             </font>
                         </td>
                         <td>
-                            <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;color:red; ">
                                 <font style="vertical-align: inherit;">{{item.value.split(':')[0]}}</font>
                             </font>
                         </td>
@@ -92,10 +92,11 @@ $(document).ready(function() {
     //检查扩展是否已安装
     //如果安装了扩展，var“webExtensionWallet”将被注入到web页面中1
 
-    if (typeof(webExtensionWallet) === "undefined") {
-        //alert ("扩展钱包未安装，请先安装.")
+    setTimeout(function() {
+        if (typeof(webExtensionWallet) === "undefined") {
         $("#noExtension").show();
     }
+}, 0);
 
     var dappAddress = "n1mJg8PovxkR2Lcyp1nTFFy7bgEZ8RAMJPe";
     var initKey = '';
